@@ -115,7 +115,7 @@ class LeetcodeData:
                   }
                 }
             """,
-            variables=leetcode.GraphqlQueryVariables(title_slug=problem_slug),
+            variables={"titleSlug": problem_slug},
             operation_name="getQuestionDetail",
         )
         data = api_instance.graphql_post(body=graphql_request).data.question
